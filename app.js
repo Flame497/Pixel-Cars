@@ -1,4 +1,4 @@
-import "./abi" as _abi;
+import "./abi.JSON" as _abi;
 
 async function getAccount() {
   const accounts = await ethereum.request({ method: 'eth_requestAccounts' });
