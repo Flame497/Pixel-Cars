@@ -26,22 +26,16 @@ document.getElementById('_maxPXC').className = 'pxcNum';
 //minted so far
 var _minted = contract.methods.mintedTotal().call();
 document.getElementById('_minted').className = 'mintAmount';
-//whitelisted price
-var whitelist = contract.methods.wlPrice().call();
-document.getElementById('whitelist').className = 'whlstPric';
-//public price
-var Pub = contract.methods.publicPrice().call();
-document.getElementById('Pub').className = 'pubPrice';
 //circulating supply
 var circSup = contract.methods.circulatingSupply().call()
 document.getElementById('circSup').className = 'supply';
 //total supply
-var totSup = contract.methods.totalSupply;
+var totSup = contract.methods.totalSupply().call();
 document.getElementById('totSup').className = 'MaxSupply';
 
 //owner functions
-var AD = contract.methods.ADAmount(amount);
+var AD = contract.methods.ADAmount(amount).call();
 document.getElementById('AD').className = 'Drop';
 
-var wl_add = contract.methods.addPXC(amount);
+var wl_add = contract.methods.addPXC(amount).call();
 document.getElementById('wl_add').className = 'adWhiteListed';
