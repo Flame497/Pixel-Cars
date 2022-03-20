@@ -6,6 +6,10 @@ async function getAccount() {
   const contract = new web3.eth.Contract(_abi, ); //insert contract address
 }
 
+//NFT check function
+var chkBought = contract.methods.chksold().call();
+document.getElementById('chkBought').classname = 'chkNft';
+
 //base functions (public)
 var purchase = contract.methods.Buy(amount).send();
 document.getElementById('purchase').className = 'buyFunc';
