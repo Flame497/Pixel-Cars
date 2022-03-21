@@ -21,7 +21,7 @@ async function sale() {
 }
 
 async function transfer() {
-  await contract.methods.transfer().send()
+  await contract.methods.transfer().send();
 }
 
 async function mint() {
@@ -41,7 +41,7 @@ async function  _minted() {
 
 //circulating supply
 async function circSup() {
-  await contract.methods.circulatingSupply().call()
+  await contract.methods.circulatingSupply().call();
 }
 
 //total supply
