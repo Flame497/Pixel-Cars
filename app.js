@@ -7,39 +7,53 @@ async function getAccount() {
 }
 
 //NFT check function
-var chkBought = contract.methods.chksold().call();
-document.getElementById('chkBought').classname = 'chkNft';
+async function chkBought() {
+  await contract.methods.chksold().call();
+}
 
 //base functions (public)
-var purchase = contract.methods.Buy(amount).send();
-document.getElementById('purchase').className = 'buyFunc';
+async function purchase() {
+  await contract.methods.Buy(amount).send();
+}
 
-var sale = contract.methods.Sell(amount).send();
-document.getElementById('sale').className = 'saleFunc';
+async function sale() {
+  await contract.methods.Sell(amount).send();
+}
 
-var transfer = contract.methods.transfer().send()
-document.getElementById('transfer').className = 'transferFunc';
+async function transfer() {
+  await contract.methods.transfer().send()
+}
 
-var mint = contract.methods.mint(pic).send();
-document.getElementById('mint').className = 'mintFunc';
+async function mint() {
+  await contract.methods.mint(pic).send();
+}
 
 //public functions
 //max mintable
-var _maxPXC = contract.methods.maxPXC().call();
-document.getElementById('_maxPXC').className = 'pxcNum';
+async function _maxPXC() {
+  await contract.methods.maxPXC().call();
+}
+
 //minted so far
-var _minted = contract.methods.mintedTotal().call();
-document.getElementById('_minted').className = 'mintAmount';
+async function  _minted() {
+  await contract.methods.mintedTotal().call();
+}
+
 //circulating supply
-var circSup = contract.methods.circulatingSupply().call()
-document.getElementById('circSup').className = 'supply';
+async function circSup() {
+  await contract.methods.circulatingSupply().call()
+}
+
 //total supply
-var totSup = contract.methods.totalSupply().call();
-document.getElementById('totSup').className = 'MaxSupply';
+async function totSup() {
+  await contract.methods.totalSupply().call();
+}
 
 //owner functions
-var AD = contract.methods.ADAmount(amount).call();
-document.getElementById('AD').className = 'Drop';
+async function AD(Num) {
+  await contract.methods.ADAmount(Num).call();
+}
 
-var wl_add = contract.methods.addPXC(amount).call();
-document.getElementById('wl_add').className = 'adWhiteListed';
+async function wl_add(Num) {
+  await contract.methods.addPXC(Num).call();
+}
